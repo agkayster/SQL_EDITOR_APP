@@ -1,0 +1,33 @@
+{
+  "name": "sql_editor_app",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "scripts": {
+    "seed": "node db/seeds.js",
+    "serve:backend": "nodemon",
+    "serve:frontend": "webpack-dev-server --node development",
+    "test": "mocha test/**/*_spec.js --require test/helper --recursive --exit",
+    "build": "webpack -p",
+    "start": "node index"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "dotenv-webpack": "^7.0.2",
+    "express": "^4.17.1",
+    "html-webpack-plugin": "^5.3.1",
+    "mongoose": "^5.12.12",
+    "nodemon": "^2.0.7",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-react": "^7.13.13",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2"
+  }
+}
