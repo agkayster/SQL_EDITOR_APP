@@ -6,19 +6,31 @@
   "scripts": {
     "seed": "node db/seeds.js",
     "serve:backend": "nodemon",
-    "serve:frontend": "webpack-dev-server --node development",
+    "serve:frontend": "webpack serve --mode=development",
     "test": "mocha test/**/*_spec.js --require test/helper --recursive --exit",
     "build": "webpack -p",
-    "start": "node index"
+    "start": "node server"
   },
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.14.3",
+    "axios": "^0.21.1",
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
+    "bulma": "^0.9.2",
+    "css-loader": "^5.2.6",
     "dotenv-webpack": "^7.0.2",
+    "eslint": "^7.27.0",
+    "eslint-plugin-react": "^7.24.0",
     "express": "^4.17.1",
     "html-webpack-plugin": "^5.3.1",
     "mongoose": "^5.12.12",
+    "mongoose-unique-validator": "^2.0.3",
+    "node-sass": "^6.0.0",
     "nodemon": "^2.0.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass-loader": "^11.1.1",
+    "style-loader": "^2.0.0",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0",
     "webpack-dev-server": "^3.11.2"
