@@ -1,0 +1,21 @@
+// @import '../node_modules/bulma/bulma.sass';
+
+table {
+	width: 103%;
+	border: 2px solid #dddddd;
+	border-spacing: 15px;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-weight: bold;
+}
+
+thead,
+tbody,
+th,
+td {
+	border: 2px solid #dddddd;
+	padding: 10px;
+}
+
+select {
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

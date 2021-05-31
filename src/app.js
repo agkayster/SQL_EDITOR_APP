@@ -2,19 +2,18 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
+import './style.scss'
 
-const tableStyle = {
-  border: '1px solid black',
-  padding: '10px'
-}
+// const tableStyle = {
+//   border: '1px solid black',
+//   padding: '10px'
+// }
 
-const fullTableStyle = {
-  width: '103%'
-}
-
-const tableTitle = {
-  textAlign: 'center'
-}
+// const fullTableStyle = {
+//   width: '103%',
+//   borderSpacing: '15px',
+//   border: '1px solid black'
+// }
 
 const App = () => {
   const [products, setproducts] = useState([])
@@ -57,27 +56,27 @@ const App = () => {
   return (
     <section className='section'>
       <div className='container is-fluid'>
-        <h3 style={tableTitle}>
-          <strong>PRODUCT QUERY TABLE</strong>
-        </h3>
-        <table style={fullTableStyle}>
-          <thead style={tableStyle}>
+        <table>
+          <caption>
+            <strong>PRODUCT QUERY TABLE</strong>
+          </caption>
+          <thead>
             <tr>
-              <th style={tableStyle}>PRODUCT ID</th>
-              <th style={tableStyle}>PRODUCT NAME</th>
-              <th style={tableStyle}>SUPPLIER ID</th>
-              <th style={tableStyle}>CATEGORY ID</th>
-              <th style={tableStyle}>QUANTITY PER UNIT</th>
-              <th style={tableStyle}>UNIT PRICE</th>
-              <th style={tableStyle}>UNITS IN STOCK</th>
-              <th style={tableStyle}>UNITS ON ORDER</th>
-              <th style={tableStyle}>REORDER LEVEL</th>
-              <th style={tableStyle}>DISCONTINUED</th>
+              <th>PRODUCT ID</th>
+              <th>PRODUCT NAME</th>
+              <th>SUPPLIER ID</th>
+              <th>CATEGORY ID</th>
+              <th>QUANTITY PER UNIT</th>
+              <th>UNIT PRICE</th>
+              <th>UNITS IN STOCK</th>
+              <th>UNITS ON ORDER</th>
+              <th>REORDER LEVEL</th>
+              <th>DISCONTINUED</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td style={tableStyle}>
+              <td>
                 <div className='select'>
                   <select
                     onChange={(e) =>
@@ -93,15 +92,15 @@ const App = () => {
                   </select>
                 </div>
               </td>
-              <td style={tableStyle}>{productName}</td>
-              <td style={tableStyle}>{supplierID}</td>
-              <td style={tableStyle}>{categoryID}</td>
-              <td style={tableStyle}>{quantityPerUnit}</td>
-              <td style={tableStyle}>{unitPrice}</td>
-              <td style={tableStyle}>{unitsInStock}</td>
-              <td style={tableStyle}>{unitsOnOrder}</td>
-              <td style={tableStyle}>{reorderLevel}</td>
-              <td style={tableStyle}>{discontinued}</td>
+              <td>{productName}</td>
+              <td>{supplierID}</td>
+              <td>{categoryID}</td>
+              <td>{quantityPerUnit}</td>
+              <td>{unitPrice}</td>
+              <td>{unitsInStock}</td>
+              <td>{unitsOnOrder}</td>
+              <td>{reorderLevel}</td>
+              <td>{discontinued}</td>
             </tr>
           </tbody>
         </table>
