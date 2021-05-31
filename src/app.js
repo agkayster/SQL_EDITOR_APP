@@ -28,13 +28,9 @@ const App = () => {
   const [reorderLevel, setreorderLevel] = useState('')
   const [discontinued, setdiscontinued] = useState('')
 
-  const productsList = () => {
-    axios
-      .get('/api/products')
-      .then((res) => {
-        setproducts(res.data)
-      })
-      .catch((err) => console.log(err))
+  const productsList = async () => {
+    const { data } = await axios.get('/api/products')
+    setproducts(data)
   }
 
   useEffect(() => {
@@ -42,9 +38,7 @@ const App = () => {
   }, [])
 
   const handleChange = (value) => {
-    console.log('is this value =>', typeof value)
     products.map((product) => {
-      console.log('product id', typeof product.productID)
       if (+value === product.productID) {
         setproductName(product.productName)
         setsupplierID(product.supplierID)
@@ -59,8 +53,6 @@ const App = () => {
     })
   }
   console.log(products)
-  const productid = products.map((product) => product.productID)
-  console.log(productid)
 
   return (
     <section className='section'>
@@ -119,132 +111,3 @@ const App = () => {
 }
 
 ReactDOM.render(<App />, document.getElementById('root'))
-{
-  /* <form className='form'>
-          <div className='field'>
-            <label className='label'>PRODUCT ID</label>
-            <div className='control'>
-              <div className='select'>
-                <select
-                  onChange={(e) =>
-                    handleChange(e.target.value)
-                  }>
-                  {products.map((product) => (
-                    <option
-                      key={product.productID}
-                      value={product.productID}>
-                      {product.productID}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          </div>
-          <div className='field'>
-            <label className='label'>PRODUCT NAME</label>
-            <div className='control'>
-              <div className='select'>
-                <select>
-                  <option key={productName}>
-                    {productName}
-                  </option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div className='field'>
-            <label className='label'>SUPPLIER ID</label>
-            <div className='control'>
-              <div className='select'>
-                <select>
-                  <option key={supplierID}>
-                    {supplierID}
-                  </option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div className='field'>
-            <label className='label'>CATEGORY ID</label>
-            <div className='control'>
-              <div className='select'>
-                <select>
-                  <option key={categoryID}>
-                    {categoryID}
-                  </option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div className='field'>
-            <label className='label'>QUANTITY PER UNIT</label>
-            <div className='control'>
-              <div className='select'>
-                <select>
-                  <option key={quantityPerUnit}>
-                    {quantityPerUnit}
-                  </option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div className='field'>
-            <label className='label'>UNIT PRICE</label>
-            <div className='control'>
-              <div className='select'>
-                <select>
-                  <option key={unitPrice}>{unitPrice}</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div className='field'>
-            <label className='label'>UNITS IN STOCK</label>
-            <div className='control'>
-              <div className='select'>
-                <select>
-                  <option key={unitsInStock}>
-                    {unitsInStock}
-                  </option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div className='field'>
-            <label className='label'>UNITS ON ORDER</label>
-            <div className='control'>
-              <div className='select'>
-                <select>
-                  <option key={unitsOnOrder}>
-                    {unitsOnOrder}
-                  </option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div className='field'>
-            <label className='label'>REORDER LEVEL</label>
-            <div className='control'>
-              <div className='select'>
-                <select>
-                  <option key={reorderLevel}>
-                    {reorderLevel}
-                  </option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div className='field'>
-            <label className='label'>DISCONTINUED</label>
-            <div className='control'>
-              <div className='select'>
-                <select>
-                  <option key={discontinued}>
-                    {discontinued}
-                  </option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </form> */
-}
