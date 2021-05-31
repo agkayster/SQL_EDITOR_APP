@@ -4,8 +4,6 @@ const app = express()
 const { port, dbURI } = require('./config/environment')
 const router = require('./config/routes')
 
-// const bodyParser = require('body-parser')
-
 mongoose
   .connect(dbURI, {
     useUnifiedTopology: true,
