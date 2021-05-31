@@ -56,7 +56,7 @@ const App = () => {
               <th>SUPPLIER ID</th>
               <th>CATEGORY ID</th>
               <th>QUANTITY PER UNIT</th>
-              <th>UNIT PRICE</th>
+              <th>UNIT PRICE($)</th>
               <th>UNITS IN STOCK</th>
               <th>UNITS ON ORDER</th>
               <th>REORDER LEVEL</th>
