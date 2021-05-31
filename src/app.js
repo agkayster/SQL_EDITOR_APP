@@ -4,17 +4,6 @@ import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import './style.scss'
 
-// const tableStyle = {
-//   border: '1px solid black',
-//   padding: '10px'
-// }
-
-// const fullTableStyle = {
-//   width: '103%',
-//   borderSpacing: '15px',
-//   border: '1px solid black'
-// }
-
 const App = () => {
   const [products, setproducts] = useState([])
   const [productName, setproductName] = useState('')
