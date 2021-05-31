@@ -1,22 +1,22 @@
-const Product = require('../models/Product');
+const Product = require('../models/Product')
 
 function indexRoute(req, res, next) {
-	Product.find(req.query)
-		.then((products) => res.json(products))
-		.catch(next);
+  Product.find(req.query)
+    .then((products) => res.json(products))
+    .catch(next)
 }
 
 function showRoute(req, res, next) {
-	Product.findById(req.params.id) // get the station from the database:MONGOOSE
-		.then((product) => {
-			if (!product) return res.sendStatus(404); //404 means not found
+  Product.findById(req.params.id) 
+    .then((product) => {
+      if (!product) return res.sendStatus(404) 
 
-			return res.json(product); //send it to JSON:EXPRESS
-		})
-		.catch(next);
+      return res.json(product) 
+    })
+    .catch(next)
 }
 
 module.exports = {
-	index: indexRoute,
-	show: showRoute,
-};
+  index: indexRoute,
+  show: showRoute
+}
